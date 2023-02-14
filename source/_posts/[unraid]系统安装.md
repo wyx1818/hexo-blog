@@ -1,3 +1,10 @@
+---
+title: unraid | 系统安装
+tags: [unrai]
+categories: unraid
+abbrlink: unraid_install
+date: 2018-02-23 08:01:30
+---
 ## 设置时区
 
 打卡 `SETTINGS->Date and Time`，将时区和NTP sever 设置成如下

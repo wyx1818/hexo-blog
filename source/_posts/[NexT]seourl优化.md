@@ -18,7 +18,7 @@ Hexo版本：3.x
 
 ## 博客网址链接URL唯一且永久化
 
-使用插件[hexo-abbrlink](https://link.jianshu.com?t=https://github.com/rozbo/hexo-abbrlink)可以做到自定义文章链接，安装：
+使用插件[hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)可以做到自定义文章链接，安装：
 
 ```bash
 npm install hexo-abbrlink --save
@@ -26,7 +26,7 @@ npm install hexo-abbrlink --save
 
 然后在Hexo的**根目录**的配置文件`_config.yml`中修改：
 
-```css
+```yml
 permalink: :abbrlink/
 #abbrlink配置
 abbrlink:
@@ -36,7 +36,7 @@ abbrlink:
 
 之后再md文件开头中加入以下信息：
 
-```css
+```yml
 ---
 abbrlink: seourl
 ---

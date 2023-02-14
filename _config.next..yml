@@ -98,8 +98,9 @@ open_graph:
 menu:
   home: / || fa fa-home
   # about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
+  # tags: /tags/ || fa fa-tags
+  黑苹果: /categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/ || fab fa-apple fa-fw
+  # categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   # sitemap: /sitemap.xml || fa fa-sitemap
@@ -846,7 +847,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -918,3 +919,61 @@ vendors:
 css: css
 js: js
 images: images
+
+# Waline Config File
+# For more information:
+# - https://waline.js.org
+# - https://waline.js.org/reference/component.html
+waline:
+  # New! Whether enable this plugin
+  enable: true
+
+  # Waline server address url, you should set this to your own link
+  serverURL: https://zuiyu.vercel.app/
+
+  # Waline library CDN url, you can set this to your preferred CDN
+  # libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js
+
+  # Waline CSS styles CDN url, you can set this to your preferred CDN
+  cssUrl: https://unpkg.com/@waline/client@v2/dist/waline.css
+
+  # Custom locales
+  # locale:
+  #   placeholder: Welcome to comment # Comment box placeholder
+
+  # If false, comment count will only be displayed in post page, not in home page
+  commentCount: true
+
+  # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
+  pageview: false
+
+  # Custom emoji
+  # emoji:
+  #   - https://unpkg.com/@waline/emojis@1.0.1/weibo
+  #   - https://unpkg.com/@waline/emojis@1.0.1/alus
+  #   - https://unpkg.com/@waline/emojis@1.0.1/bilibili
+  #   - https://unpkg.com/@waline/emojis@1.0.1/qq
+  #   - https://unpkg.com/@waline/emojis@1.0.1/tieba
+  #   - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+
+  # Comment infomation, valid meta are nick, mail and link
+  # meta:
+  #   - nick
+  #   - mail
+  #   - link
+
+  # Set required meta field, e.g.: [nick] | [nick, mail]
+  # requiredMeta:
+  #   - nick
+
+  # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
+  # lang: zh-CN
+
+  # Word limit, no limit when setting to 0
+  # wordLimit: 0
+
+  # Whether enable login, can choose from 'enable', 'disable' and 'force'
+  # login: enable
+
+  # comment per page
+  # pageSize: 10

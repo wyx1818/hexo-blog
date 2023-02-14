@@ -1,4 +1,3 @@
 ---
-title: 分类
-date: 2023-02-14 23:11:53
+type: categories
 ---
