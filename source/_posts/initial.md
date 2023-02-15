@@ -4,10 +4,10 @@ date: 2018-2-22 08:01:30
 categories: 碎碎念
 abbrlink: initial
 comments: false
-top: true
+sticky: 999
+copyright: false
 ---
 
-<style>.post-copyright{display:none}</style>
 {% cq %}岁月本长，而忙者自促；天地本宽，而鄙者自隘；风花雪月本闲，而劳攘者自冗！
 
 洪应明 ——《菜根谭》
