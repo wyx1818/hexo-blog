@@ -106,6 +106,8 @@ deploy:
 
 symbols_count_time:
   symbols: true
+  total_symbols: false
+  total_time: false
   time: true
   awl: 4
   wpm: 275

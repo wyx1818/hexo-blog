@@ -28,7 +28,7 @@ custom_file_path:
   #bodyEnd: source/_data/body-end.njk
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -250,7 +250,7 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enable: true
+    enable: false
     another_day: true
   categories: true
 
@@ -268,7 +268,7 @@ tag_icon: true
 reward_settings:
   # If true, a donate button will be displayed in every article by default.
   enable: true
-  animation: true
+  animation: false
 
 reward:
   wechatpay: /images/wechatpay.png
@@ -802,10 +802,10 @@ plausible:
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: # <your app id>
-  app_key: # <your app key>
+  app_id: yco6kzExQEAWPhrbzOnKrbq3-gzGzoHsz
+  app_key: cnWV4LATzrHA6k0AAXhbaTI1
   # Required for apps from CN region
-  server_url: # <your server url>
+  server_url: https://waline.zuiyu1818.cn
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
@@ -906,12 +906,12 @@ vendors:
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs | custom
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-  plugins: cdnjs
+  plugins: custom
   # Custom CDN URL
   # For example:
   # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
   # custom_cdn_url: https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}
-  custom_cdn_url:
+  custom_cdn_url: https://cdn.staticfile.org/${cdnjs_name}/${version}/${cdnjs_file}
 
 # Assets
 # Accelerate delivery of static files using a CDN
@@ -945,7 +945,7 @@ waline:
   commentCount: true
 
   # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
-  pageview: false
+  pageview: true
 
   # Custom emoji
   # emoji:
@@ -957,14 +957,16 @@ waline:
   #   - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
 
   # Comment infomation, valid meta are nick, mail and link
-  # meta:
-  #   - nick
-  #   - mail
-  #   - link
+  meta:
+    - nick
+    - mail
+    - link
 
   # Set required meta field, e.g.: [nick] | [nick, mail]
-  # requiredMeta:
-  #   - nick
+  requiredMeta:
+    - nick
+
+  dark: auto
 
   # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
   # lang: zh-CN
