@@ -24,7 +24,7 @@ abbrlink: Hac_Clover
 
 Clover主题：`BeautyDark256`
 
-![完成效果](https://cdn.zuiyu1818.cn/img/clover_finish.png)
+![完成效果](https://files.zuiyu1818.cn/img/clover_finish.png)
 
 <!-- more -->
 

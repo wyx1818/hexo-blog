@@ -36,7 +36,7 @@ abbrlink: Mac_software1
 
 最主要的是他占用资源甚至比系统的活动监视器还好，强烈推荐
 
-![](https://cdn.zuiyu1818.cn/img/istat.gif)
+![](https://files.zuiyu1818.cn/img/istat.gif)
 
 ## Bartender 3
 
@@ -54,11 +54,11 @@ macOS 中，菜单栏是一个很重要的区域，你可以快速查看一些�
 
 但是当使用的软件多了，我的菜单栏就变成了这样：
 
-![未整理](https://cdn.zuiyu1818.cn/img/bar1.png)
+![未整理](https://files.zuiyu1818.cn/img/bar1.png)
 
 Bartender 可以把使用率低或者不需要显示的图标隐藏起来，保证了我随时能看到需要的信息，随时可以点击常用的应用。
 
-![整理后](https://cdn.zuiyu1818.cn/img/bar2.png)
+![整理后](https://files.zuiyu1818.cn/img/bar2.png)
 
 ## Hot Corners（触发角）
 
@@ -78,7 +78,7 @@ Bartender 可以把使用率低或者不需要显示的图标隐藏起来，保�
 
 调度中心，启动屏幕保护程序，启动台 和 桌面。
 
-![触发角](https://cdn.zuiyu1818.cn/img/HotCorners.png)
+![触发角](https://files.zuiyu1818.cn/img/HotCorners.png)
 
 下面简单介绍一个应用场景，比如正在使用Final Cut Pro X剪辑视频，突然想导入素材，就可以使用这个，省去了那一堆操作。
 
@@ -86,7 +86,7 @@ Bartender 可以把使用率低或者不需要显示的图标隐藏起来，保�
 
 当然大家还可以各开脑洞，玩出不一样的骚操作。
 
-![场景示例](https://cdn.zuiyu1818.cn/img/HotCorners.gif)
+![场景示例](https://files.zuiyu1818.cn/img/HotCorners.gif)
 
 最后嘛，缺点还是有的，新人很容易误触，不过多练习练习就好了
 
@@ -102,7 +102,7 @@ Bartender 可以把使用率低或者不需要显示的图标隐藏起来，保�
 
 接下来要祭出一个大杀器 ： **Popclip。** 它是一个鼠标拓展小工具，功能先看 Gif 图。
 
-![Popclip](https://cdn.zuiyu1818.cn/img/Popclip.gif)
+![Popclip](https://files.zuiyu1818.cn/img/Popclip.gif)
 
 一句话总结，Popclip 可以让你在选择一段文字后，自动弹出一些下一步可能会进行的操作，比快捷键还快捷。
 
@@ -114,7 +114,7 @@ Bartender 可以把使用率低或者不需要显示的图标隐藏起来，保�
 
 这里就是 Popclip 最有用和最神奇的地方，几乎所有 Mac 常用的应用，Popclip 都有其相应的拓展。它可以把我上面提过的应用串联起来，实现文本与应用的无缝链接。下面是我在使用的拓展：
 
-![我的拓展](https://cdn.zuiyu1818.cn/img/PopclipS.png)
+![我的拓展](https://files.zuiyu1818.cn/img/PopclipS.png)
 
 ## iClip
 
@@ -130,7 +130,7 @@ iClip Mac版是一款高级的剪贴板管理工具，使您能够保存几乎�
 
 iClip的设计可以简单地像Mac的Dock那样简单：只需将您的光标移动到屏幕的一侧，iClip弹出即时使用。使用热键，拖放功能或只需单击一下即可进入和退出iClip。
 
-![iClip](https://cdn.zuiyu1818.cn/img/ICIPi.gif)
+![iClip](https://files.zuiyu1818.cn/img/ICIPi.gif)
 
 ## 结语
 

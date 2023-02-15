@@ -20,7 +20,7 @@ abbrlink: NAS_qBittorrent
 
 ## Download Station
 
-![DownloadStation](https://cdn.zuiyu1818.cn//NAS/DownloadStation.jpg)
+![DownloadStation](https://files.zuiyu1818.cn//NAS/DownloadStation.jpg)
 
 emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就是个套着壳的Tr。
 
@@ -36,7 +36,7 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 ## Transmission
 
-![Transmission_WebUI](https://cdn.zuiyu1818.cn//NAS/Transmission_WebUI.jpg)
+![Transmission_WebUI](https://files.zuiyu1818.cn//NAS/Transmission_WebUI.jpg)
 
 保种神器，占用资源小，是几乎所有PT站点保种首选
 
@@ -54,9 +54,9 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 有人反映tr无法下载到其他磁盘，表现为没有下载速度，这其中有权限不对的锅。这里简单说下权限问题
 
-![](https://cdn.zuiyu1818.cn//NAS/Tr_Auth1.jpg)
+![](https://files.zuiyu1818.cn//NAS/Tr_Auth1.jpg)
 
-![](https://cdn.zuiyu1818.cn//NAS/Tr_Auth2.jpg)
+![](https://files.zuiyu1818.cn//NAS/Tr_Auth2.jpg)
 
 ### tracker替换教程
 
@@ -64,19 +64,19 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 1. 获取当前tracker，若无属性选项卡，点击右下角即可展开
 
-   ![](https://cdn.zuiyu1818.cn//NAS/tr_tacker1.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/tr_tacker1.jpg)
 
    此处记得完整复制 ↓ ，不要只复制个开头！！！
 
-   ![](https://cdn.zuiyu1818.cn//NAS/tr_tacker2.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/tr_tacker2.jpg)
 
 2. 替换tracker
 
-   ![](https://cdn.zuiyu1818.cn//NAS/tr_tacker3.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/tr_tacker3.jpg)
 
    此功能要求字段完全匹配，所以必须完整复制过来
 
-   ![](https://cdn.zuiyu1818.cn//NAS/tr_tacker4.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/tr_tacker4.jpg)
 
 3. 点击确定，等待完成即可
 
@@ -100,29 +100,29 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 1. 首先确认已启动`admin`用户。此套件默认运行用户为admin，所以不启用可能会导致安装后无法运行。
 
-   ![确认admin用户已经开启](https://cdn.zuiyu1818.cn//NAS/admin_sure.jpg)
+   ![确认admin用户已经开启](https://files.zuiyu1818.cn//NAS/admin_sure.jpg)
 
 2. 开启家目录。因为套件的配置文件、种子文件、校验文件等都是默认存放在家目录
 
-   ![启用家目录](https://cdn.zuiyu1818.cn//NAS/qB_home.jpg)
+   ![启用家目录](https://files.zuiyu1818.cn//NAS/qB_home.jpg)
 
 3. 检查家目录下的`admin`文件夹权限是否正确。不放心的小伙伴可以在权限选项卡再确认下admin是否拥有`完全控制`的权限
 
-   ![检查权限](https://cdn.zuiyu1818.cn//NAS/admin_auth.jpg)
+   ![检查权限](https://files.zuiyu1818.cn//NAS/admin_auth.jpg)
 
 4. 在套件中心手动安装qBittorrent套件
 
-   ![](https://cdn.zuiyu1818.cn//NAS/qB_install.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/qB_install.jpg)
 
 5. 安装完后，在套件列表里点击即可打开网页控制界面（或者手动使用8085端口访问）。默认用户名`admin`密码`adminadmin`
 
-   ![](https://cdn.zuiyu1818.cn//NAS/qB_start.jpg)
+   ![](https://files.zuiyu1818.cn//NAS/qB_start.jpg)
 
 ### 权限设置
 
 有小伙伴反应，使用套件安装的qBittorrent下载无速度，这是因为软件读写需要文件夹拥有admin权限，所以给文件下载路径相应的权限即可
 
-![](https://cdn.zuiyu1818.cn//NAS/qb_auth.jpg)
+![](https://files.zuiyu1818.cn//NAS/qb_auth.jpg)
 
 ### 替换WebUI
 
@@ -139,23 +139,23 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 #### 1. 下载备用WebUI
 
-![](https://cdn.zuiyu1818.cn//NAS/qB_web1.jpg)
+![](https://files.zuiyu1818.cn//NAS/qB_web1.jpg)
 
-![](https://cdn.zuiyu1818.cn//NAS/qB_web2.jpg)
+![](https://files.zuiyu1818.cn//NAS/qB_web2.jpg)
 
 #### 2. 解压文件至群晖
 
 找到所在位置
 
-![](https://cdn.zuiyu1818.cn//NAS/qB_web3.jpg)
+![](https://files.zuiyu1818.cn//NAS/qB_web3.jpg)
 
 在Web用户界面启用备用Web UI
 
-![](https://cdn.zuiyu1818.cn//NAS/qB_web4.jpg)
+![](https://files.zuiyu1818.cn//NAS/qB_web4.jpg)
 
 保存即可大功告成啦
 
-![](https://cdn.zuiyu1818.cn//NAS/qB_web5.jpg)
+![](https://files.zuiyu1818.cn//NAS/qB_web5.jpg)
 
 ### qBittorrent高级参数设置
 
@@ -171,5 +171,5 @@ emmm，这货一言难尽吧，用的比较少一言难尽吧。这货其实就�
 
 默认的web界面很多参数都无法修改，尤其是想修改磁盘缓存。打开配置文件，在 [Preferences] 字段新增一行`Downloads\DiskWriteCacheSize=XXXX `，其中XXXX是缓存大小，单位是MB。
 
-![](https://cdn.zuiyu1818.cn//NAS/qb_ini.jpg)
+![](https://files.zuiyu1818.cn//NAS/qb_ini.jpg)
 

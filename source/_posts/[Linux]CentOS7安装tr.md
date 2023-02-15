@@ -8,7 +8,7 @@ date: 2019-08-13 18:01:30
 
 从某位朋友那py了台vps，想着闲着也不能闲着，毕竟怎么说也是个G管，刚好最近入了PT的坑，那就装个`Transmisson`来挂PT，成为一个大刷子吧O(∩_∩)O~~
 
-![](https://cdn.zuiyu1818.cn/Linux/transmission_WEB.png)
+![](https://files.zuiyu1818.cn/Linux/transmission_WEB.png)
 
 本文涉及：
 
@@ -119,7 +119,7 @@ systemctl enable transmission-daemon
 find / -name transmission-create
 ```
 
-![](https://cdn.zuiyu1818.cn/Linux/tr_find.png)
+![](https://files.zuiyu1818.cn/Linux/tr_find.png)
 
 cd进这个目录
 
@@ -145,7 +145,7 @@ cd /usr/bin/
 
 填完回车，种子就开始制作了
 
-![](https://cdn.zuiyu1818.cn/Linux/tr_make.png)
+![](https://files.zuiyu1818.cn/Linux/tr_make.png)
 
 之后将种子下载回来，就可以发布啦
 

@@ -91,7 +91,7 @@ print(time.gmtime(3000000000))
 
 ## 几种格式之间的转换
 
-![时间格式互换](https://cdn.zuiyu1818.cn/Python/time_transform.png)
+![时间格式互换](https://files.zuiyu1818.cn/Python/time_transform.png)
 
 ```
 #时间戳-->结构化时间
@@ -109,7 +109,7 @@ time.struct_time(tm_year=2017, tm_mon=7, tm_mday=14, tm_hour=10, tm_min=40, tm_s
 1500000000.0
 ```
 
-![格式化时间](https://cdn.zuiyu1818.cn/Python/time_format.png)
+![格式化时间](https://files.zuiyu1818.cn/Python/time_format.png)
 
 ```
 #结构化时间 --> %a %b %d %H:%M:%S %Y串
