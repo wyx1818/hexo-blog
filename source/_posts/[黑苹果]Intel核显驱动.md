@@ -14,7 +14,7 @@ abbrlink: Hac_Intel_Graphics
 
 {% note primary %}
 
-##### 清理以前的驱动→获取 IGPU 的设备路径→填入ig-platform-id→填入device-id
+清理以前的驱动→获取 IGPU 的设备路径→填入ig-platform-id→填入device-id
 
 {% endnote %}
 不要被本文的长度吓到了，举个例子：驱动完HD4600也就这点东西：
@@ -178,7 +178,8 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 上述属性应使用十六进制代码表示，并且需要 {% label primary@两两一组 %} {% label danger@倒序 %} 输入。如 `0x0A260006` 应该用 `0600260A` 表示
 
 {% note warning %}
-##### 很多人问倒序怎么倒的，这里画个图解释一下
+
+### 很多人问倒序怎么倒的，这里画个图解释一下
 
 `0x`指16进制，在这咱可以不管，提取出后面的`0A260006`，两两一组`0A 26 00 06`过程如下图所示，最终得到`0600260A`
 
@@ -206,7 +207,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 - 如未设定 FB 并且存在独立显卡，将使用一组空 FB。
 
 {% endnote %}
-## HD 2000/3000（[Sandy Bridge](https://zh.wikipedia.org/zh-cn/Sandy_Bridge微架構) 微架构，下文简称 SNB）
+### HD 2000/3000（[Sandy Bridge](https://zh.wikipedia.org/zh-cn/Sandy_Bridge微架構) 微架构，下文简称 SNB）
 
 支持 macOS 10.7 至 10.13.6，本文适用于 10.8 到 10.13.6。在旧版本系统上请使用传统驱动方式。从 macOS 10.14 起，HD 2000/3000 已经不再支持。
 
@@ -242,7 +243,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 ![](https://files.zuiyu1818.cn/mac/FB_HD2000_Z77.png)
 
-## HD 2500/4000（[Ivy Bridge](https://zh.wikipedia.org/zh-cn/Ivy_Bridge微架構) 微架构，下文简称 Ivy）
+### HD 2500/4000（[Ivy Bridge](https://zh.wikipedia.org/zh-cn/Ivy_Bridge微架構) 微架构，下文简称 Ivy）
 
 支持 macOS 10.8 或更新版本。
 
@@ -273,7 +274,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 ![](https://files.zuiyu1818.cn/mac/FB_HD2500.png)
 
-## Intel HD Graphics 4200-5200（[Haswell](https://zh.wikipedia.org/zh-cn/Haswell微架構) 微架构）
+### Intel HD Graphics 4200-5200（[Haswell](https://zh.wikipedia.org/zh-cn/Haswell微架構) 微架构）
 
 支持 macOS 10.9 或更新版本。
 
@@ -315,7 +316,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 ![](https://files.zuiyu1818.cn/mac/FB_HD4600.png)
 
-## HD 5300-6300（[Broadwell](https://zh.wikipedia.org/zh-cn/Broadwell微架構) 微架构，下文简称 BDW）
+### HD 5300-6300（[Broadwell](https://zh.wikipedia.org/zh-cn/Broadwell微架構) 微架构，下文简称 BDW）
 
 支持 macOS 10.10.2 或更新版本。
 
@@ -349,7 +350,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 - 0x16220007（桌面版，缺省值）
 - 0x16260006（移动版，缺省值）。
 
-## HD 510-580（[Skylake](https://zh.wikipedia.org/zh-cn/Skylake微架構) 微架构，下文简称 SKL）
+### HD 510-580（[Skylake](https://zh.wikipedia.org/zh-cn/Skylake微架構) 微架构，下文简称 SKL）
 
 支持 macOS 10.11.4 或更新版本。
 
@@ -381,7 +382,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 - 0x19120000（桌面版，缺省值）
 - 0x19160000（移动版，缺省值）
 
-## HD 610-650（[Kaby Lake](https://zh.wikipedia.org/zh-cn/Kaby_Lake微架構) 微架构，下文简称 KBL）
+### HD 610-650（[Kaby Lake](https://zh.wikipedia.org/zh-cn/Kaby_Lake微架構) 微架构，下文简称 KBL）
 
 支持 macOS 10.12.6 或更新版本。
 
@@ -414,7 +415,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 ![](https://files.zuiyu1818.cn/mac/FB_UHD620.png)
 
-## UHD 630（[Coffee Lake](https://zh.wikipedia.org/zh-cn/Coffee_Lake微架构) 微架构，下文简称 CFL）
+### UHD 630（[Coffee Lake](https://zh.wikipedia.org/zh-cn/Coffee_Lake微架构) 微架构，下文简称 CFL）
 
 支持 macOS 10.14 或更新版本。
 
