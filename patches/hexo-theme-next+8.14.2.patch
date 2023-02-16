@@ -15,3 +15,16 @@ index 0e27c12..cd9c91d 100644
    </div>
  {%- endif %}
  
+diff --git a/node_modules/hexo-theme-next/source/css/_common/outline/mobile.styl b/node_modules/hexo-theme-next/source/css/_common/outline/mobile.styl
+index ccb8e73..1e87ddb 100644
+--- a/node_modules/hexo-theme-next/source/css/_common/outline/mobile.styl
++++ b/node_modules/hexo-theme-next/source/css/_common/outline/mobile.styl
+@@ -49,7 +49,7 @@ if (hexo-config('mobile_layout_economy')) {
+       }
+ 
+       img, video {
+-        margin-bottom: 10px !important;
++        margin-bottom: 16px !important;
+       }
+ 
+       .note {
