@@ -12,7 +12,7 @@ abbrlink: Hac_Intel_Graphics_simple
 
 看弄完驱动HD4600也就这点东西：
 
-![](https://files.zuiyu1818.cn/mac/FB_Final.png)
+![](https://files.zuiyu1818.cn/Mac/FB_Final.png)
 
 本文比较简单，若你还有其他需求，如修改显存大小、支持4k显示屏等，可以查看[详解版本](https://zuiyu1818.cn/posts/Hac_Intel_Graphics.html)
 
@@ -71,7 +71,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 在config.plist ▸ Devices ▸ Properties中填入设备路径
 
-![](https://files.zuiyu1818.cn/mac/Device_IGPU_path.png)
+![](https://files.zuiyu1818.cn/Mac/Device_IGPU_path.png)
 
 ## ig-platform-id和device-id（核心步骤）
 
@@ -86,7 +86,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 DATA属性应使用十六进制代码表示，并且需要两两一组倒序输入。如 `0x0A260006` 应该用 `0600260A` 表示，以HD4600为例，模板如下
 
-![](https://files.zuiyu1818.cn/mac/FB_Final.png)
+![](https://files.zuiyu1818.cn/Mac/FB_Final.png)
 
 ### 下面给出笔记本常见的核显
 
@@ -129,17 +129,17 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 通常 SNB 平台无需指定 FB，与 `board-id` 相对应的一组 FB 将会被自动使用。不过，在使用不基于 SNB 平台的 SMBios 时，则需指定 FB。（如使用 `HD 3000` + 基于 `Ivy Bridge` 平台的 `MacBookPro9,1` 时，则需指定 FB）
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000.png)
 
 > 注意！为 SNB 平台指定 FB 时，属性名应为 `AAPL,snb-platform-id`，这与其他平台不同。
 
 对于桌面版，需设定（仿冒）`device-id` 为 `26010000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000_desk.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000_desk.png)
 
 在基于 [7 系列芯片组](https://ark.intel.com/content/www/cn/zh/ark/products/series/98460/intel-7-series-chipsets.html?_ga=2.100876037.569501178.1553421075-527540512.1553334841) 的主板上使用基于 `SNB` 微架构的处理器时（如在 `Z77` 芯片组上使用基于 `SNB` 微架构的 `i7-2600` 时），需设定（仿冒）`IMEI` 的 `device-ID` 为 `3A1C0000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000_Z77.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000_Z77.png)
 
 ### HD 2500/4000（[Ivy Bridge](https://zh.wikipedia.org/zh-cn/Ivy_Bridge微架構) 微架构，下文简称 Ivy）
 
@@ -171,7 +171,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 在基于 [6 系列芯片组](https://ark.intel.com/content/www/cn/zh/ark/products/series/98461/intel-6-series-chipsets.html?_ga=2.2193906.333725926.1553422863-527540512.1553334841) 的主板上使用基于 `Ivy` 微架构的处理器时（如在 `Z68` 芯片组上使用基于 `Ivy` 微架构的 `i7-3770` 时），需设定（仿冒）`IMEI` 的 `device-ID` 为 `3A1E0000`。（如下所示）
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2500.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2500.png)
 
 ### Intel HD Graphics 4200-5200（[Haswell](https://zh.wikipedia.org/zh-cn/Haswell微架構) 微架构）
 
@@ -214,7 +214,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 对于 桌面版 HD 4400 以及*所有*移动版核显，需设定（仿冒）`IGPU` 的 `device-id` 为 `12040000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD4600.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD4600.png)
 
 ### HD 5300-6300（[Broadwell](https://zh.wikipedia.org/zh-cn/Broadwell微架構) 微架构，下文简称 BDW）
 
@@ -314,7 +314,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 对于 UHD 620 ([Kaby Lake Refresh](https://en.wikipedia.org/wiki/Kaby_Lake#List_of_8th_generation_Kaby_Lake_R_processors)需设定（仿冒）`IGPU` 的 `device-id` 为 `16590000`
 
-![](https://files.zuiyu1818.cn/mac/FB_UHD620.png)
+![](https://files.zuiyu1818.cn/Mac/FB_UHD620.png)
 
 ### UHD 630（[Coffee Lake](https://zh.wikipedia.org/zh-cn/Coffee_Lake微架构) 微架构，下文简称 CFL）
 
@@ -349,4 +349,4 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 *从 macOS Mojave 10.14.4 起，无需再设定此参数！*
 
-![](https://files.zuiyu1818.cn/mac/FB_UHD630.png)
+![](https://files.zuiyu1818.cn/Mac/FB_UHD630.png)

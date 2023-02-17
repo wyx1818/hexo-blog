@@ -65,7 +65,7 @@ abbrlink: Hackintosh
 
 我这里的U盘名叫`Newsmy`
 
-![transmac安装](https://files.zuiyu1818.cn/mac/transmac.gif)
+![transmac安装](https://files.zuiyu1818.cn/Mac/transmac.gif)
 
 等待读条完毕即可。(安装时间根据U盘速度而定，请耐心等待)
 
@@ -77,7 +77,7 @@ abbrlink: Hackintosh
 
 将适合你的电脑的EFI驱动文件用`DiskGenius`写入到`U盘`的EFI分区
 
-![拷贝EFI到U盘](https://files.zuiyu1818.cn/mac/DS_EFI.gif)
+![拷贝EFI到U盘](https://files.zuiyu1818.cn/Mac/DS_EFI.gif)
 
 至此可引导macOS的U盘就制作完成了！
 
@@ -102,7 +102,7 @@ abbrlink: Hackintosh
 
 可以通过下面的方法来查看和更改分区类型
 
-![转换为GPT格式](https://files.zuiyu1818.cn/mac/GUID.gif)
+![转换为GPT格式](https://files.zuiyu1818.cn/Mac/GUID.gif)
 
 #### 扩展ESP分区
 
@@ -122,13 +122,13 @@ UEFI引导需要ESP分区(EFI system partition)，而macOS需要只是200MB的EF
 
 这里使用的是`DiskGenius`，理论上讲是可以直接合并的，但是我这不知道为什么不行，所以我演示时直接将ESP和MSR分区都删了，重新建立的。(此方法需要先将ESP分区里的引导Windows的EFI文件夹备份)
 
-![扩展ESP分区](https://files.zuiyu1818.cn/mac/ESP_drop_MSR.gif)
+![扩展ESP分区](https://files.zuiyu1818.cn/Mac/ESP_drop_MSR.gif)
 
 #### 准备macOS分区
 
 由于`DiskGenius`操作系统盘时需要重启到PE，所以这里使用Windows自带的磁盘工具(右键左下角win图标打开即可)，系统会占用大约20G空间，建议40G起步最好
 
-![macOS分区](https://files.zuiyu1818.cn/mac/mac分区.gif)
+![macOS分区](https://files.zuiyu1818.cn/Mac/mac分区.gif)
 
 #### U盘安装macOS
 
@@ -145,13 +145,13 @@ UEFI引导需要ESP分区(EFI system partition)，而macOS需要只是200MB的EF
 
 2. 选择你要的语言，点击继续。进入Mojave的实用工具界面，选择`磁盘工具`。选中之前分出来的空间，点击抹掉，格式选择为`APFS`（Mac OS扩展日志式也可以，别选加密就好），输入一个名称(建议英文)
 
-   ![格式为APFS](https://files.zuiyu1818.cn/mac/格式化.png)
+   ![格式为APFS](https://files.zuiyu1818.cn/Mac/格式化.png)
 
 3. 关闭磁盘工具，选择“安装 macOS”，然后找到自己刚抹掉的那个盘，选中后安装
 
    ![安装macOS](https://zuiyu-1253240738.cos.ap-beijing.myqcloud.com/Mac/install%20macOS.png)
 
-   ![安装macOS](https://files.zuiyu1818.cn/mac/安装macOS.png)
+   ![安装macOS](https://files.zuiyu1818.cn/Mac/安装macOS.png)
 
 4. 之后跑进度条是转移数据，转移完成后会重启，重启时选择U盘启动进入Clover界面，这时会可能会有不止一个苹果分区（4个）。选择Boot macOS from XXXX（XXXX你刚抹掉那个安装盘的名字），过一会进入正式安装界面。
 
@@ -167,7 +167,7 @@ UEFI引导需要ESP分区(EFI system partition)，而macOS需要只是200MB的EF
 
 2. 进入U盘安装，一直格式化这步，选中刚转为GPT格式的硬盘，点击抹掉，方案选择GUID，格式选择APFS，名字随便取
 
-   ![单盘安装](https://files.zuiyu1818.cn/mac/单盘安装.png)
+   ![单盘安装](https://files.zuiyu1818.cn/Mac/单盘安装.png)
 
 3. 后面步骤一样
 
@@ -183,7 +183,7 @@ UEFI引导需要ESP分区(EFI system partition)，而macOS需要只是200MB的EF
 
 ### 操作演示
 
-![实操演示](https://files.zuiyu1818.cn/mac/UEFI.gif)
+![实操演示](https://files.zuiyu1818.cn/Mac/UEFI.gif)
 
 ### 图文步骤
 

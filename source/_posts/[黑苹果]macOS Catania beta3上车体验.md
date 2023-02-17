@@ -34,11 +34,11 @@ defaults write com.apple.sidecar.display allowAllDevices -bool YES
 
 重启后屏幕右上角会出现"隔空播放的入口，点击就可以看到iPad
 
-![AirPlay](https://files.zuiyu1818.cn/mac/AirPlay_ipad.png)
+![AirPlay](https://files.zuiyu1818.cn/Mac/AirPlay_ipad.png)
 
 如果没有出现，点击Finder的Go To Folder输入`/System/Library/CoreServices/Menu Extras`，找到`Diaplays.menu`双击即可
 
-![Diaplays.menu](https://files.zuiyu1818.cn/mac/Diaplays.png)
+![Diaplays.menu](https://files.zuiyu1818.cn/Mac/Diaplays.png)
 
 若还不行，将iPad插上数据线和电脑连接应该就可以了
 
@@ -92,4 +92,4 @@ Replace: 83F93F0F
 - Mac-C9CF552659EA9913
 - Mac-FC02E91DDD3FA6A4
 
-![Board-ID](https://files.zuiyu1818.cn/mac/board-id.png)
+![Board-ID](https://files.zuiyu1818.cn/Mac/board-id.png)

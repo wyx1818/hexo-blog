@@ -19,7 +19,7 @@ abbrlink: Hac_Intel_Graphics
 {% endnote %}
 不要被本文的长度吓到了，举个例子：驱动完HD4600也就这点东西：
 
-![](https://files.zuiyu1818.cn/mac/FB_Final.png)
+![](https://files.zuiyu1818.cn/Mac/FB_Final.png)
 
 <!-- more -->
 
@@ -36,7 +36,7 @@ abbrlink: Hac_Intel_Graphics
 
 出现这种界面，则是使用Xcode打开的Plist文件，若你觉得Xcode太大不想安装，也可以选择[PlistEdit Pro](https://www.fatcatsoftware.com/plisteditpro/)
 
-![Xcode](https://files.zuiyu1818.cn/mac/Xcode_Graphics_disable.png)
+![Xcode](https://files.zuiyu1818.cn/Mac/Xcode_Graphics_disable.png)
 
 ### 下载相关
 
@@ -56,7 +56,7 @@ abbrlink: Hac_Intel_Graphics
 
 由于Clover的特性，所有的DATA类型数据都必须两两一组倒序填入，例如：`0x0A160000`转换之后就是`0000160A`，如下图：
 
-![](https://files.zuiyu1818.cn/mac/WEG_framebuffer_patch.png)
+![](https://files.zuiyu1818.cn/Mac/WEG_framebuffer_patch.png)
 
 ## 为什么要使用Lilu + WhateverGreen
 
@@ -77,7 +77,7 @@ WhateverGreen将取代Lilu的所有其他视频补丁插件，它目前已经合
 
 1. 在 BIOS 中设置核显所需的内存量（即 预分配 DVMT，英文: DVMT Pre-Allocated）为 32 MB, 64 MB, 96 MB 等，与使用的 FB 值相关。如要使用最大值（英文: DVMT Total），请设为 MAX。
 
-   ![BIOS设置](https://files.zuiyu1818.cn/mac/bios.png)
+   ![BIOS设置](https://files.zuiyu1818.cn/Mac/bios.png)
 
 2. 移除以下驱动（如果曾经使用）
 
@@ -102,13 +102,13 @@ WhateverGreen将取代Lilu的所有其他视频补丁插件，它目前已经合
    - config.plist ▸ Graphics ▸ ig-platform-id = `清空`
    - config.plist ▸ Devices ▸ FakeID ▸ IntelGFX = `清空`
 
-   ![关闭Graphics显卡注入](https://files.zuiyu1818.cn/mac/Clover_Graphics_disable.png)
+   ![关闭Graphics显卡注入](https://files.zuiyu1818.cn/Mac/Clover_Graphics_disable.png)
 
-   ![关闭Device中的显卡注入](https://files.zuiyu1818.cn/mac/Clover_Graphics_disable.png)
+   ![关闭Device中的显卡注入](https://files.zuiyu1818.cn/Mac/Clover_Graphics_disable.png)
 
    如果你还不确定还可以打开plist文件查看是否显示为NO
 
-   ![Xcode](https://files.zuiyu1818.cn/mac/Xcode_Graphics_disable.png)
+   ![Xcode](https://files.zuiyu1818.cn/Mac/Xcode_Graphics_disable.png)
 
 4. 禁用Clover中Apci的以下DSDT补丁
 
@@ -118,17 +118,17 @@ WhateverGreen将取代Lilu的所有其他视频补丁插件，它目前已经合
    - AddIMEI 
    - FixHDA
 
-   ![关闭DSDT补丁](https://files.zuiyu1818.cn/mac/Clover_Acpi_DSDT.png)
+   ![关闭DSDT补丁](https://files.zuiyu1818.cn/Mac/Clover_Acpi_DSDT.png)
 
-   ![关闭DSDT补丁](https://files.zuiyu1818.cn/mac/Clover_Acpi_DSDT2.png)
+   ![关闭DSDT补丁](https://files.zuiyu1818.cn/Mac/Clover_Acpi_DSDT2.png)
 
 5. 关闭Clover中Devices的`UseIntelHDMI`
 
-   ![关闭UseIntelHDMI](https://files.zuiyu1818.cn/mac/Clover_Devices_UseInterHDMIpng.png)
+   ![关闭UseIntelHDMI](https://files.zuiyu1818.cn/Mac/Clover_Devices_UseInterHDMIpng.png)
 
 6. 删除引导参数：`-disablegfxfirmware`
 
-   ![删除引导参数](https://files.zuiyu1818.cn/mac/Clover_boot_HD.png)
+   ![删除引导参数](https://files.zuiyu1818.cn/Mac/Clover_boot_HD.png)
 
 7. 删除以下位置所有的和IGPU、HDMI相关条目（一般来说清空就行了）：
 
@@ -136,11 +136,11 @@ WhateverGreen将取代Lilu的所有其他视频补丁插件，它目前已经合
    - config.plist ▸ Devices ▸ Properties
    - config.plist ▸ Devices ▸ AddProperties
 
-   ![删除IGPU](https://files.zuiyu1818.cn/mac/Clover_Device_IGPU.png)
+   ![删除IGPU](https://files.zuiyu1818.cn/Mac/Clover_Device_IGPU.png)
 
 8. 删除或禁用以下 ACPI 重命名补丁: `GFX0 to IGPU`, `PEGP to GFX0`, `HECI to IMEI`, `MEI to IMEI`, `HDAS to HDEF`, `B0D3 to HDAU`
 
-   ![禁用Acpi补丁](https://files.zuiyu1818.cn/mac/Clover_Acpi_Patch.png)
+   ![禁用Acpi补丁](https://files.zuiyu1818.cn/Mac/Clover_Acpi_Patch.png)
 
 若以上都做完了，恭喜你完成了清理工作。
 
@@ -185,19 +185,19 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 {% endnote %}
 
-![](https://files.zuiyu1818.cn//mac/daoxu.jpg)
+![](https://files.zuiyu1818.cn/Mac/daoxu.jpg)
 
 下面分别提供了适用于不同微架构的常用 `IGPU` 和 `IMEI` 属性模版。
 
-![Xcode](https://files.zuiyu1818.cn/mac/FB_template_xcode.png)
+![Xcode](https://files.zuiyu1818.cn/Mac/FB_template_xcode.png)
 
-![clover中的设置](https://files.zuiyu1818.cn/mac/FB_template_Clover.png)
+![clover中的设置](https://files.zuiyu1818.cn/Mac/FB_template_Clover.png)
 
 > 如果某个属性不是必需的，请完全删除掉；如果某个 `PciRoot` 位置不存在，也请彻底删除！
 
 **选择一个适合的 FB。** 首先试试推荐值，如果失败，则逐个尝试其他值.在寻找合适的 FB 时，可以临时通过启动参数设置，此时 `Properties` 部分中的 FB 设置将被忽略。如: `igfxframe=0x0166000B`
 
-![启动参数设置igfxframe](https://files.zuiyu1818.cn/mac/Clover_Boot_Graphics.png)
+![启动参数设置igfxframe](https://files.zuiyu1818.cn/Mac/Clover_Boot_Graphics.png)
 
 {% note info %}
 
@@ -231,17 +231,17 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 通常 SNB 平台无需指定 FB，与 `board-id` 相对应的一组 FB 将会被自动使用。不过，在使用不基于 SNB 平台的 SMBios 时，则需指定 FB。（如使用 `HD 3000` + 基于 `Ivy Bridge` 平台的 `MacBookPro9,1` 时，则需指定 FB）
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000.png)
 
 > 注意！为 SNB 平台指定 FB 时，属性名应为 `AAPL,snb-platform-id`，这与其他平台不同。
 
 对于桌面版，需设定（仿冒）`device-id` 为 `26010000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000_desk.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000_desk.png)
 
 在基于 [7 系列芯片组](https://ark.intel.com/content/www/cn/zh/ark/products/series/98460/intel-7-series-chipsets.html?_ga=2.100876037.569501178.1553421075-527540512.1553334841) 的主板上使用基于 `SNB` 微架构的处理器时（如在 `Z77` 芯片组上使用基于 `SNB` 微架构的 `i7-2600` 时），需设定（仿冒）`IMEI` 的 `device-ID` 为 `3A1C0000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2000_Z77.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2000_Z77.png)
 
 ### HD 2500/4000（[Ivy Bridge](https://zh.wikipedia.org/zh-cn/Ivy_Bridge微架構) 微架构，下文简称 Ivy）
 
@@ -272,7 +272,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 在基于 [6 系列芯片组](https://ark.intel.com/content/www/cn/zh/ark/products/series/98461/intel-6-series-chipsets.html?_ga=2.2193906.333725926.1553422863-527540512.1553334841) 的主板上使用基于 `Ivy` 微架构的处理器时（如在 `Z68` 芯片组上使用基于 `Ivy` 微架构的 `i7-3770` 时），需设定（仿冒）`IMEI` 的 `device-ID` 为 `3A1E0000`。（如下所示）
 
-![](https://files.zuiyu1818.cn/mac/FB_HD2500.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD2500.png)
 
 ### Intel HD Graphics 4200-5200（[Haswell](https://zh.wikipedia.org/zh-cn/Haswell微架構) 微架构）
 
@@ -314,7 +314,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 对于 桌面版 HD 4400 以及*所有*移动版核显，需设定（仿冒）`IGPU` 的 `device-id` 为 `12040000`。
 
-![](https://files.zuiyu1818.cn/mac/FB_HD4600.png)
+![](https://files.zuiyu1818.cn/Mac/FB_HD4600.png)
 
 ### HD 5300-6300（[Broadwell](https://zh.wikipedia.org/zh-cn/Broadwell微架構) 微架构，下文简称 BDW）
 
@@ -413,7 +413,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 对于 UHD 620 ([Kaby Lake Refresh](https://en.wikipedia.org/wiki/Kaby_Lake#List_of_8th_generation_Kaby_Lake_R_processors)需设定（仿冒）`IGPU` 的 `device-id` 为 `16590000`
 
-![](https://files.zuiyu1818.cn/mac/FB_UHD620.png)
+![](https://files.zuiyu1818.cn/Mac/FB_UHD620.png)
 
 ### UHD 630（[Coffee Lake](https://zh.wikipedia.org/zh-cn/Coffee_Lake微架构) 微架构，下文简称 CFL）
 
@@ -448,7 +448,7 @@ DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 
 *从 macOS Mojave 10.14.4 起，无需再设定此参数！*
 
-![](https://files.zuiyu1818.cn/mac/FB_UHD630.png)
+![](https://files.zuiyu1818.cn/Mac/FB_UHD630.png)
 
 ## 使用 WEG 自定义 FB 和 端口 补丁
 
@@ -512,7 +512,7 @@ N 为补丁索引号: 0, 1, 2, ... 9
 
 再次重申，所有DATA数据类型需要将数据两两一组倒过来填入，例如：`0x16260006`转换之后就是这样`06002616`填入，如下图：
 
-![](https://files.zuiyu1818.cn/mac/WEG_framebuffer_patch.png)
+![](https://files.zuiyu1818.cn/Mac/WEG_framebuffer_patch.png)
 
 当设置内存大小时，你可能想知道DATA是怎么计算出来的。用framebuffer-fbmem参数举例，当需要设置为48M之后它应填入的值是：`00000003`，这个也是转换后的值，所以原来的值应当是`03000000`，这是一个16进制的数字，转换成10进制是`50331648`。我们知道1M=1024KB，1KB = 1024B，所以，我们把转换成十进制之后的数字`50331648`除以1024然后再除以1024，得出的结果就是48了，所以这串数字代表的就是48M。
 
@@ -575,7 +575,7 @@ N 为补丁索引号: 0, 1, 2, ... 9
 
 为核显添加 `enable-hdmi20` 属性，或使用 `-cdfon` 启动参数代替，**否则将会黑屏**。
 
-![](https://files.zuiyu1818.cn/mac/WEG_HDMI20.png)
+![](https://files.zuiyu1818.cn/Mac/WEG_HDMI20.png)
 
 参考链接：
 
