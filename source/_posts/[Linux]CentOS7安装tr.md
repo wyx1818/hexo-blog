@@ -1,24 +1,24 @@
 ---
 title: Linux | 如何挂PT：CentOS 7安装配置美化Transmission及制作种子
-tags: [Linux,Transmission]
+tags: [Linux, Transmission]
 categories: Linux
 abbrlink: transmission
 date: 2019-08-13 18:01:30
 ---
 
-从某位朋友那py了台vps，想着闲着也不能闲着，毕竟怎么说也是个G管，刚好最近入了PT的坑，那就装个`Transmisson`来挂PT，成为一个大刷子吧O(∩_∩)O~~
-
-![](https://files.zuiyu1818.cn/Linux/transmission_WEB.png)
+从某位朋友那 py 了台 vps，想着闲着也不能闲着，毕竟怎么说也是个 G 管，刚好最近入了 PT 的坑，那就装个`Transmisson`来挂 PT，成为一个大刷子吧 O(∩_∩)O~~
 
 本文涉及：
 
-- 安装Transmission 2.94
-- web UI美化
-- Transmission制作种子
+- 安装 Transmission 2.94
+- web UI 美化
+- Transmission 制作种子
 
 <!-- more -->
 
-## 安装Transmission 2.94
+![transmission](https://files.zuiyu1818.cn/Linux/transmission_WEB.png)
+
+## 安装 Transmission 2.94
 
 ### 安装
 
@@ -78,7 +78,7 @@ sudo firewall-cmd --reload
 firewall-cmd --list-all
 ```
 
-## Web UI美化界面
+## Web UI 美化界面
 
 Transmission 自带的网页 UI 比较简陋，可以安装[transmission-web-control](https://github.com/ronggang/transmission-web-control)进行美化：
 
@@ -91,7 +91,7 @@ bash install-tr-control.sh
 
 > -bash: wget: 未找到命令
 
-要安装yum
+要安装 yum
 
 ```bash
 yum -y install wget
@@ -107,11 +107,11 @@ systemctl enable transmission-daemon
 
 ## 制作种子
 
-从其他站点转资源，需要修改tracker，可是linux下貌似没有修改tracker的工具（如有 欢迎小伙伴告知），而无论是webGUI还是各个平台的客户端都没有集成这一功能，很蛋疼。
+从其他站点转资源，需要修改 tracker，可是 linux 下貌似没有修改 tracker 的工具（如有 欢迎小伙伴告知），而无论是 webGUI 还是各个平台的客户端都没有集成这一功能，很蛋疼。
 
-下面写一下如何用tr制作种子
+下面写一下如何用 tr 制作种子
 
-### 寻找tr安装目录
+### 寻找 tr 安装目录
 
 由于每人安装的可执行目录都不同，所以我们要先找到安装目录，输入：
 
@@ -121,7 +121,7 @@ find / -name transmission-create
 
 ![](https://files.zuiyu1818.cn/Linux/tr_find.png)
 
-cd进这个目录
+cd 进这个目录
 
 ```bash
 cd /usr/bin/
@@ -132,15 +132,15 @@ cd /usr/bin/
 制作很简单，看一个范例
 
 ```bash
-./transmission-create -p -o /wyx/19.torrent -t https://pt.m-team.cc/announce.php -s 4096 /wyx2/MLB-2019-08-11_ARI\@LAD.mkv 
+./transmission-create -p -o /wyx/19.torrent -t https://pt.m-team.cc/announce.php -s 4096 /wyx2/MLB-2019-08-11_ARI\@LAD.mkv
 ```
 
 参数说明：
 
-- `-p`表示这是私用的种子，这个PT必须要加上
+- `-p`表示这是私用的种子，这个 PT 必须要加上
 - `-o`生成的种子输出位置，不要忘记把名字打上
-- `-t`tracker服务器地址，自行查询各大站点
-- `-s`每个文件块的大小，单位是KB，设置的4096，也就是4M
+- `-t`tracker 服务器地址，自行查询各大站点
+- `-s`每个文件块的大小，单位是 KB，设置的 4096，也就是 4M
 - 最后空一格写源文件的位置，也就是文件的存放位置，可以是一个文件或者一整个目录
 
 填完回车，种子就开始制作了
@@ -151,5 +151,5 @@ cd /usr/bin/
 
 参考链接：
 
-- [如何挂PT: CentOS 7安装配置美化Transmission](https://ylface.com/server/431)
-- [用transmission直接制作种子的方法](https://tieba.baidu.com/p/5024301968?red_tag=1405790335)
+- [如何挂 PT: CentOS 7 安装配置美化 Transmission](https://ylface.com/server/431)
+- [用 transmission 直接制作种子的方法](https://tieba.baidu.com/p/5024301968?red_tag=1405790335)

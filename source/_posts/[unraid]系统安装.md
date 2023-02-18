@@ -1,6 +1,6 @@
 ---
-title: unraid | 系统安装
-tags: [unrai]
+title: Unraid | 系统安装
+tags: [Unrai]
 categories: unraid
 abbrlink: unraid_install
 date: 2018-02-23 08:01:30

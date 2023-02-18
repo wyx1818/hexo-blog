@@ -23,4 +23,4 @@ copyright: false
 
 </center>
 
-![糖](https://zuiyu-1253240738.cos.ap-beijing.myqcloud.com/%E7%B3%96.jpg)
+![糖](https://files.zuiyu1818.cn/%E7%B3%96.jpg)
