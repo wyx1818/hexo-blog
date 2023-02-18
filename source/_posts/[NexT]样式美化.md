@@ -1,7 +1,7 @@
 ---
 title: NexT | 主题CSS美化
 date: 2019-2-24 15:01:30
-tags: [NexT,Hexo]
+tags: [NexT, Hexo]
 categories: Hexo
 abbrlink: NexT_CSS
 ---
@@ -20,7 +20,7 @@ abbrlink: NexT_CSS
 
 ```css
 // 文章内链接文本样式
-.post-body p a{
+.post-body p a {
   color: #0593d3; //原始链接颜色
   border-bottom: none;
   border-bottom: 1px solid #0593d3; //底部分割线颜色
@@ -39,9 +39,8 @@ abbrlink: NexT_CSS
 ```css
 // 代码样式
 code {
-    color: #ff7600;
-    background: #fbf7f8;
-    margin: 2px;
+  color: #ff7600;
+  background: #fbf7f8;
+  margin: 2px;
 }
 ```
-

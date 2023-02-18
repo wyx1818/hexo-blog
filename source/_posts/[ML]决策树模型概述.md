@@ -6,6 +6,7 @@ categories: ML
 mathjax: true
 abbrlink: ML_Decision_tree
 ---
+
 ## 决策树模型
 
 决策树模型（Decision Tree model）是一个模拟人类决策过程思想得模型。
@@ -57,16 +58,19 @@ abbrlink: ML_Decision_tree
 > [E. B. Hunt, J. Marin, and P.T.Stone's book "Experiments in Induction" published by Academic Press in 1966]
 
 使决策树受到关注、成为机器学习主流技术的算法：ID3(Iterative Dichotomiser 迭代二分器的简称)
-> [J. R. Quinlan's paper in a book "Expert Systems in the Micro Electronic Age" edited by D. Michie,  published by Edinburgh University Press in 1979]
+
+> [J. R. Quinlan's paper in a book "Expert Systems in the Micro Electronic Age" edited by D. Michie, published by Edinburgh University Press in 1979]
 
 最常用的决策树算法： C4.5
+
 > [J. R. Quinlan's book "C4.5:Programs for Machine Learning" published by Morgan Kaufmann in 1993]
 
 可以用于回归任务的决策树算法：CART (Classification and Regression Tree)
+
 > L. Breiman, J. H. Friedman, R. A. Olshen, and C. J. Stone's book "Classification and Regression Trees" published by Wadsworth in 1984 ]
 
 基于决策树的最强大算法：**RF** (Random Forest)
-[L. Breiman's MLJ'  01 paper "Random Forest "]
+[L. Breiman's MLJ' 01 paper "Random Forest "]
 
 ## 总结
 

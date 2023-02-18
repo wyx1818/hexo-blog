@@ -1,20 +1,20 @@
 ---
 title: 黑苹果 | 4步驱动Intel核显
 date: 2019-7-8 23:01:30
-tags: [黑苹果,Intel,核显]
+tags: [黑苹果, Intel, 核显]
 categories: 黑苹果
 abbrlink: Hac_Intel_Graphics_simple
 ---
 
-只需4步，轻松驱动Intel核显（#手动滑稽）
+只需 4 步，轻松驱动 Intel 核显（#手动滑稽）
 
-清理以前的驱动→添加lilu+WhateverGreen驱动→获取 IGPU 的设备路径→填入ig-platform-id和device-id
+清理以前的驱动 → 添加 lilu+WhateverGreen 驱动 → 获取 IGPU 的设备路径 → 填入 ig-platform-id 和 device-id
 
-看弄完驱动HD4600也就这点东西：
+看弄完驱动 HD4600 也就这点东西：
 
 ![](https://files.zuiyu1818.cn/Mac/FB_Final.png)
 
-本文比较简单，若你还有其他需求，如修改显存大小、支持4k显示屏等，可以查看[详解版本](https://zuiyu1818.cn/posts/Hac_Intel_Graphics.html)
+本文比较简单，若你还有其他需求，如修改显存大小、支持 4k 显示屏等，可以查看[详解版本](https://zuiyu1818.cn/posts/Hac_Intel_Graphics.html)
 
 <!-- more -->
 
@@ -32,34 +32,35 @@ abbrlink: Hac_Intel_Graphics_simple
    - IntelGraphicsDVMTFixup
    - NvidiaGraphicsFixup
    - Shiki
-   > 这些驱动文件通常位于Clover的`kexts/Other`文件夹中
-2. 关闭所有Clover中的显卡注入
-   - config.plist ▸ Graphics ▸ Inject ▸ ATI = NO 
-   - config.plist ▸ Graphics ▸ Inject ▸ Intel = NO 
-   - config.plist ▸ Graphics ▸ Inject ▸ NVidia = NO 
+     > 这些驱动文件通常位于 Clover 的`kexts/Other`文件夹中
+
+2. 关闭所有 Clover 中的显卡注入
+   - config.plist ▸ Graphics ▸ Inject ▸ ATI = NO
+   - config.plist ▸ Graphics ▸ Inject ▸ Intel = NO
+   - config.plist ▸ Graphics ▸ Inject ▸ NVidia = NO
    - config.plist ▸ Graphics ▸ ig-platform-id = `清空`
    - config.plist ▸ Devices ▸ FakeID ▸ IntelGFX = `清空`
-3. 禁用Clover中Apci的以下DSDT补丁
-   - AddHDMI 
-   - FixDisplay 
-   - FixIntelGfx 
-   - AddIMEI 
+3. 禁用 Clover 中 Apci 的以下 DSDT 补丁
+   - AddHDMI
+   - FixDisplay
+   - FixIntelGfx
+   - AddIMEI
    - FixHDA
 4. 删除引导参数：`-disablegfxfirmware
-5. 删除以下位置所有的和IGPU、HDMI相关条目（一般来说清空就行了）：
+5. 删除以下位置所有的和 IGPU、HDMI 相关条目（一般来说清空就行了）：
    - config.plist ▸ Devices ▸ Arbitrary
    - config.plist ▸ Devices ▸ Properties
    - config.plist ▸ Devices ▸ AddProperties
 6. 删除或禁用以下 ACPI 重命名补丁: `GFX0 to IGPU`, `PEGP to GFX0`, `HECI to IMEI`, `MEI to IMEI`, `HDAS to HDEF`, `B0D3 to HDAU`
-7. 移除CLOVER/ACPI/patched里所有和HDMI及核显驱动相关补丁
+7. 移除 CLOVER/ACPI/patched 里所有和 HDMI 及核显驱动相关补丁
 
-## 添加Lilu + WhateverGreen驱动
+## 添加 Lilu + WhateverGreen 驱动
 
-下载[Lilu](https://github.com/acidanthera/Lilu) 和 [WhateverGreen](https://github.com/acidanthera/WhateverGreen)驱动，选择release版本，解压并将.kext文件置于Clover的`kexts/Other`文件夹中
+下载[Lilu](https://github.com/acidanthera/Lilu) 和 [WhateverGreen](https://github.com/acidanthera/WhateverGreen)驱动，选择 release 版本，解压并将.kext 文件置于 Clover 的`kexts/Other`文件夹中
 
 ## 获取 IGPU 的设备路径
 
-下载并使用[gfxutil](https://github.com/acidanthera/gfxutil/releases)工具，将gfxutil文件解压至桌面，打开终端输入如下代码：
+下载并使用[gfxutil](https://github.com/acidanthera/gfxutil/releases)工具，将 gfxutil 文件解压至桌面，打开终端输入如下代码：
 
 ```
 $ cd Desktop
@@ -67,39 +68,39 @@ $ ./gfxutil -f IGPU
 DevicePath = PciRoot(0x0)/Pci(0x2,0x0)
 ```
 
-其中DevicePath后面显示的`PciRoot(0x0)/Pci(0x2,0x0)`就是IGPU的设备路径
+其中 DevicePath 后面显示的`PciRoot(0x0)/Pci(0x2,0x0)`就是 IGPU 的设备路径
 
-在config.plist ▸ Devices ▸ Properties中填入设备路径
+在 config.plist ▸ Devices ▸ Properties 中填入设备路径
 
 ![](https://files.zuiyu1818.cn/Mac/Device_IGPU_path.png)
 
-## ig-platform-id和device-id（核心步骤）
+## ig-platform-id 和 device-id（核心步骤）
 
-> 7m通常都是ig-platform-id不合适
+> 7m 通常都是 ig-platform-id 不合适
 
-在config.plist ▸ Devices ▸ Properties中添加以下内容：
+在 config.plist ▸ Devices ▸ Properties 中添加以下内容：
 
 - `AAPL,ig-platform-id` 或 `AAPL,snb-platform-id（仅适用于 Sandy Bridge 微架构）`
 - 设备 `IGPU` 的 `device-id`（需要仿冒时）
 - 设备 `IMEI` 的 `device-id`（需要仿冒时）
 - 部分补丁设定（必要时）
 
-DATA属性应使用十六进制代码表示，并且需要两两一组倒序输入。如 `0x0A260006` 应该用 `0600260A` 表示，以HD4600为例，模板如下
+DATA 属性应使用十六进制代码表示，并且需要两两一组倒序输入。如 `0x0A260006` 应该用 `0600260A` 表示，以 HD4600 为例，模板如下
 
 ![](https://files.zuiyu1818.cn/Mac/FB_Final.png)
 
 ### 下面给出笔记本常见的核显
 
-1. `AAPL,ig-platform-id`（设备平台id，直接影响显卡是否能成功驱动）： 举例一些常用`笔记本`的核显id（均为DATA数据类型）
+1. `AAPL,ig-platform-id`（设备平台 id，直接影响显卡是否能成功驱动）： 举例一些常用`笔记本`的核显 id（均为 DATA 数据类型）
    - HD4600~HD5200：`0x0A260000`或`0x0A2E0008`
    - HD5300~HD6000：`0x16260006`
    - HD630：`0x3E9B0000`
-2. `device-id`（设备id，可能是能让黑苹果正确显示设备信息，直接使用**无需倒序**）：
+2. `device-id`（设备 id，可能是能让黑苹果正确显示设备信息，直接使用**无需倒序**）：
    - HD4600~HD5200：`12040000`
    - HD5300~HD6000：`16160000`
    - HD630：`3e9b0000`
 
-## 各代ig-platform-id查询
+## 各代 ig-platform-id 查询
 
 > 当推荐不好用时，可以尝试详细列表里的
 >
@@ -111,7 +112,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 此方法无法开启 Metal。
 
-*推荐的 FB 配置*：
+_推荐的 FB 配置_：
 
 - 0x00030010（桌面版，缺省值）
 - 0x00010000（移动版，缺省值）
@@ -145,7 +146,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.8 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x0166000A（桌面版，缺省值）
 - 0x01620005（桌面版）
@@ -177,7 +178,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.9 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x0D220003（桌面版，缺省值）
 - 0x0A160000（移动版，缺省值）
@@ -220,7 +221,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.10.2 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x16220007（桌面版，缺省值）
 - 0x16260006（移动版，缺省值）。
@@ -255,7 +256,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.11.4 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x19120000（桌面版，缺省值）
 - 0x19160000（移动版，缺省值）
@@ -287,7 +288,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.12.6 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x59160000（桌面版，缺省值）
 - 0x59120000（桌面版，推荐）
@@ -295,21 +296,21 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 <details><summary>KBL 平台可用的 FB 列表：（点击此处以展开）</summary>
 
-- 0x591E0000 (移动版，3 端口，无FBMEM，35 MB)
-- 0x59160000 (移动版，3 端口，无FBMEM，35 MB)
-- 0x59230000 (桌面版，3 端口，无FBMEM，39 MB)
-- 0x59260000 (桌面版，3 端口，无FBMEM，39 MB)
-- 0x59270000 (桌面版，3 端口，无FBMEM，39 MB)
-- 0x59270009 (移动版，3 端口，无FBMEM，39 MB)
-- 0x59120000 (桌面版，3 端口，无FBMEM，39 MB)
+- 0x591E0000 (移动版，3 端口，无 FBMEM，35 MB)
+- 0x59160000 (移动版，3 端口，无 FBMEM，35 MB)
+- 0x59230000 (桌面版，3 端口，无 FBMEM，39 MB)
+- 0x59260000 (桌面版，3 端口，无 FBMEM，39 MB)
+- 0x59270000 (桌面版，3 端口，无 FBMEM，39 MB)
+- 0x59270009 (移动版，3 端口，无 FBMEM，39 MB)
+- 0x59120000 (桌面版，3 端口，无 FBMEM，39 MB)
 - 0x591B0000 (移动版，3 端口，39 MB)
-- 0x591E0001 (移动版，3 端口，无FBMEM，39 MB)
-- 0x59180002 (移动版，无端口，无FBMEM，1 MB)
-- 0x59120003 (移动版，无端口，无FBMEM，1 MB)
+- 0x591E0001 (移动版，3 端口，无 FBMEM，39 MB)
+- 0x59180002 (移动版，无端口，无 FBMEM，1 MB)
+- 0x59120003 (移动版，无端口，无 FBMEM，1 MB)
 - 0x59260007 (桌面版，3 端口，79 MB)
-- 0x59270004 (移动版，3 端口，无FBMEM，58 MB)
-- 0x59260002 (移动版，3 端口，无FBMEM，58 MB)
-- 0x591B0006 (移动版，1 端口，无FBMEM，39 MB)
+- 0x59270004 (移动版，3 端口，无 FBMEM，58 MB)
+- 0x59260002 (移动版，3 端口，无 FBMEM，58 MB)
+- 0x591B0006 (移动版，1 端口，无 FBMEM，39 MB)
 </details>
 
 对于 UHD 620 ([Kaby Lake Refresh](https://en.wikipedia.org/wiki/Kaby_Lake#List_of_8th_generation_Kaby_Lake_R_processors)需设定（仿冒）`IGPU` 的 `device-id` 为 `16590000`
@@ -320,7 +321,7 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 支持 macOS 10.14 或更新版本。
 
-*推荐的 FB 设置*：
+_推荐的 FB 设置_：
 
 - 0x3EA50000（桌面版，缺省值）
 - 0x3E9B0007（桌面版，推荐）
@@ -347,6 +348,6 @@ DATA属性应使用十六进制代码表示，并且需要两两一组倒序输�
 
 注意：使用第九代 Coffee Lake R 处理器时，需设定（仿冒）`IGPU` 的 `device-id` 为 `923E0000`。（如下所示）
 
-*从 macOS Mojave 10.14.4 起，无需再设定此参数！*
+_从 macOS Mojave 10.14.4 起，无需再设定此参数！_
 
 ![](https://files.zuiyu1818.cn/Mac/FB_UHD630.png)

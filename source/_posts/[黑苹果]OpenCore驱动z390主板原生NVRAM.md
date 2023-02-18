@@ -6,21 +6,21 @@ categories: 黑苹果
 abbrlink: z390_NVRAM
 ---
 
-不久前得知OpenCore搞定了Intel 300系列主板的NVRAM，可是一直很懒没有行动。
+不久前得知 OpenCore 搞定了 Intel 300 系列主板的 NVRAM，可是一直很懒没有行动。
 
-之前z390模拟NVRAM各种麻烦就算了，成功了好使了一段时间，某天不知道为啥又不好使了，很烦人。
+之前 z390 模拟 NVRAM 各种麻烦就算了，成功了好使了一段时间，某天不知道为啥又不好使了，很烦人。
 
-这下z390驱动了原生的NVRAM硬件，终于可以安心了。
+这下 z390 驱动了原生的 NVRAM 硬件，终于可以安心了。
 
-以下教程理论适用于300系列的所有主板，但是我只有z390，其他请自行测试
+以下教程理论适用于 300 系列的所有主板，但是我只有 z390，其他请自行测试
 
 <!-- more -->
 
-## 清理模拟NVRAM
+## 清理模拟 NVRAM
 
-如果你之前模拟过NVRAM，记得按以下步骤清理
+如果你之前模拟过 NVRAM，记得按以下步骤清理
 
-### 清理LogoutHook
+### 清理 LogoutHook
 
 1. 终端输入以下命令来获取`LogoutHook `的路径
 
@@ -34,7 +34,7 @@ abbrlink: z390_NVRAM
    The domain/default pair of (com.apple.loginwindow, LogoutHook) does not exist
    ```
 
-   说明系统内没有安装过LogoutHook，可以**跳过2、3步骤**
+   说明系统内没有安装过 LogoutHook，可以**跳过 2、3 步骤**
 
 2. 删除 `LogoutHook.command` 文件
 
@@ -48,21 +48,21 @@ abbrlink: z390_NVRAM
    sudo defaults delete com.apple.loginwindow LogoutHook
    ```
 
-### 修改config
+### 修改 config
 
-挂载EFI目录，打开`/EFI/OC/config.plist`，修改以下设置
+挂载 EFI 目录，打开`/EFI/OC/config.plist`，修改以下设置
 
-| 键                                     | 值   |
-| -------------------------------------- | ---- |
-| Booter → Quirks → DisableVariableWrite | NO   |
-| Misc → Security → AllowNvramReset      | YES  |
-| Misc → Security → ExposeSensitiveData  | 3    |
-| NVRAM → LegacyEnable                   | NO   |
+| 键                                     | 值  |
+| -------------------------------------- | --- |
+| Booter → Quirks → DisableVariableWrite | NO  |
+| Misc → Security → AllowNvramReset      | YES |
+| Misc → Security → ExposeSensitiveData  | 3   |
+| NVRAM → LegacyEnable                   | NO  |
 
-- DisableVariableWrite：后续会使用DSDT补丁使300系列主板支持原生NVRAM，所以需要设置为`NO`
-- AllowNvramReset：在开机引导项中加入重置NVRAM缓存功能的选项，为方便清空以前的NVRAM我们选择`YES`
-- ExposeSensitiveData：设置值为`3`，这样会将OpenCore 的启动路径和版本储存进 NVRAM
-- LegacyEnable：因为不需要模拟NVRAME了，所以这里设置为`NO`
+- DisableVariableWrite：后续会使用 DSDT 补丁使 300 系列主板支持原生 NVRAM，所以需要设置为`NO`
+- AllowNvramReset：在开机引导项中加入重置 NVRAM 缓存功能的选项，为方便清空以前的 NVRAM 我们选择`YES`
+- ExposeSensitiveData：设置值为`3`，这样会将 OpenCore 的启动路径和版本储存进 NVRAM
+- LegacyEnable：因为不需要模拟 NVRAME 了，所以这里设置为`NO`
 
 ### 删除文件
 
@@ -77,13 +77,13 @@ abbrlink: z390_NVRAM
 
 同时清理`config.plist`中`UEFI→Drivers`对应的这两条目
 
-## 重置NVRAM
+## 重置 NVRAM
 
-重启电脑，进入OpenCore然后选择引导界面的重置 NVRAM 选项「或者」按下快捷键 `Command + Option + P + R`
+重启电脑，进入 OpenCore 然后选择引导界面的重置 NVRAM 选项「或者」按下快捷键 `Command + Option + P + R`
 
-若引导丢失，使用Windows重新添加下即可
+若引导丢失，使用 Windows 重新添加下即可
 
-## 添加DSDT补丁
+## 添加 DSDT 补丁
 
 ### 下载补丁文件
 
@@ -110,8 +110,8 @@ SSDT-PMC.dsl`需要使用`MaciASL`编译，懒得话可以直接下载编译好�
 
 ![SSDT](https://files.zuiyu1818.cn/Mac/NVRAM_Startup.jpg)
 
-重启，若`*`位于你选择的磁盘前则通过打补丁激活原生NVRAM操作成功
+重启，若`*`位于你选择的磁盘前则通过打补丁激活原生 NVRAM 操作成功
 
 **参考链接：**
 
-- [精解OpenCore](https://blog.daliansky.net/OpenCore-BootLoader.html)
+- [精解 OpenCore](https://blog.daliansky.net/OpenCore-BootLoader.html)

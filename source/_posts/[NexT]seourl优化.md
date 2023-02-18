@@ -8,15 +8,15 @@ abbrlink: NexT_seourl
 
 ## 前言
 
-URL地址对于SEO中挺重要的，那么如何对链接进行个性化，并在后面加上 `.html` 显得更加正式呢。
+URL 地址对于 SEO 中挺重要的，那么如何对链接进行个性化，并在后面加上 `.html` 显得更加正式呢。
 
-Hexo版本：3.x
+Hexo 版本：3.x
 
-答案即将揭晓🙃
+答案即将揭晓 🙃
 
 <!-- more -->
 
-## 博客网址链接URL唯一且永久化
+## 博客网址链接 URL 唯一且永久化
 
 使用插件[hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)可以做到自定义文章链接，安装：
 
@@ -24,17 +24,17 @@ Hexo版本：3.x
 npm install hexo-abbrlink --save
 ```
 
-然后在Hexo的**根目录**的配置文件`_config.yml`中修改：
+然后在 Hexo 的**根目录**的配置文件`_config.yml`中修改：
 
 ```yml
 permalink: :abbrlink/
 #abbrlink配置
 abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: dec    # 进制：dec(default) and hex
+  alg: crc32 # 算法：crc16(default) and crc32
+  rep: dec # 进制：dec(default) and hex
 ```
 
-之后再md文件开头中加入以下信息：
+之后再 md 文件开头中加入以下信息：
 
 ```yml
 ---
@@ -44,7 +44,7 @@ abbrlink: seourl
 
 > 如果文章中未指定 `abbrlink: xxx`，将会根据算法随机生成数字
 
-这样就确保了博文链接的唯一化，只要不修改md文件的 `abbrlink` 的值，url就永久不会改变。如此md文件名和文件内容也可以随便改了。这样也有利于SEO优化。
+这样就确保了博文链接的唯一化，只要不修改 md 文件的 `abbrlink` 的值，url 就永久不会改变。如此 md 文件名和文件内容也可以随便改了。这样也有利于 SEO 优化。
 
 ## 我的配置
 
@@ -86,6 +86,6 @@ permalink_defaults:
 
 ## 参考资料
 
-1. [帆的博客-Hexo博客SEO优化](https://molock.cn/posts/19286/)
+1. [帆的博客-Hexo 博客 SEO 优化](https://molock.cn/posts/19286/)
 
 2. [永久链接（Permalinks）](https://hexo.io/zh-cn/docs/permalinks.html)
