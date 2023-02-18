@@ -17,6 +17,8 @@ ntp3.aliyun.com
 hk.pool.ntp.org
 ```
 
+<!-- more -->
+
 ## APP 商店
 
 ```

@@ -8,7 +8,8 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "debug": "hexo clean & hexo s --debug",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "prepare": "husky install"
   },
   "hexo": {
     "version": "6.3.0"
@@ -35,6 +36,12 @@
     "hexo-word-counter": "^0.1.0"
   },
   "devDependencies": {
-    "patch-package": "^6.5.1"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "patch-package": "^6.5.1",
+    "prettier": "2.8.4"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
