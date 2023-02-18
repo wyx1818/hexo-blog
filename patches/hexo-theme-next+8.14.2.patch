@@ -9,7 +9,7 @@ index 0e27c12..cd9c91d 100644
 -    {{- __('footer.powered', next_url('https://hexo.io', 'Hexo') + ' & ' + next_url(next_site, 'NexT.' + theme.scheme)) }}
 +    {{- __('footer.powered', next_url(next_site, 'NexT')) }}
 +    &
-+    <a href='https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral' rel="noopener external nofollow noreferrer" target="_blank" class="upyan" >
++    <a href='https://console.upyun.com/register/?invite=H1Nf88yZ8' rel="noopener external nofollow noreferrer" target="_blank" class="upyan" >
 +      <img src="https://files.zuiyu1818.cn/upyun.png" alt="又拍云">
 +    </a>提供加速
    </div>
