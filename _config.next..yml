@@ -99,7 +99,7 @@ menu:
   home: / || fa fa-home
   # about: /about/ || fa fa-user
   # tags: /tags/ || fa fa-tags
-  黑苹果: /categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/ || fab fa-apple fa-fw
+  黑苹果: /categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/ || fab fa-apple
   # categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
@@ -395,7 +395,7 @@ reading_progress:
 
 # Bookmark Support
 bookmark:
-  enable: true
+  enable: false
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -930,7 +930,7 @@ waline:
   enable: true
 
   # Waline server address url, you should set this to your own link
-  serverURL: https://zuiyu.vercel.app/
+  serverURL: https://comments.zuiyu1818.cn/
 
   # Waline library CDN url, you can set this to your preferred CDN
   libUrl: https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline.js
