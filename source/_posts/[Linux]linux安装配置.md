@@ -42,7 +42,7 @@ which zsh
 
 > which 出来的可能不是 /bin/zsh，不过只要它我个人比较喜欢使用 /bin/zsh 的
 
-## on-my-zsh
+### on-my-zsh
 
 这个应该不用多说了吧，默认的 zsh 配置起来还是比较繁琐，用这个可以快速美化完成配置。
 
@@ -75,7 +75,7 @@ REMOTE=${REMOTE:-https://gitee.com/${REPO}.git}
 
 使用 `:wq` 保存退出，然后 `./install.sh` 执行即可。
 
-## 更改主题
+### 更改主题
 
 比较喜欢 [sosource .zshrc](https://github.com/romkatv/powerlevel10k)，非常的好看和实用。
 
@@ -111,3 +111,21 @@ source .zshrc
 macOS 下的效果
 
 ![](https://files.zuiyu1818.cn/Linux/powerlevel10k.png)
+
+## docker
+
+神器，容器化技术带来无限可能，自己的好多服务都是依托它来搭建的。
+
+跟着教程地址一步步来 [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+### 可视化 docker
+
+安装完毕后，上可视化神器 Portainer，教程地址 [Install Portainer CE with Docker on Linux](https://docs.portainer.io/start/install-ce/server/docker/linux)
+
+其实不用那么麻烦，这个可以命令行一把嗦
+
+```shell
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+
+接着通过你的 `https://127.0.0.1:9443`就可以访问啦，记得把 _127.0.0.1_ 换成你自己的 IP
